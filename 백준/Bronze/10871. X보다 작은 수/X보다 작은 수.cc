@@ -3,14 +3,10 @@ using namespace std;
 int main() {
     ios::sync_with_stdio(0);
     cin.tie(0);
-    int n, x;
-    int num[10000];
+    int n, x, t;
     cin >> n >> x;
-    for (int i = 0; i < n; i++) {
-        cin >> num[i];
+    while (n--) {
+        cin >> t;
+        if (x > t) cout << t << ' ';
     }
-    for (int i = 0; i < n; i++) {
-        if (num[i] < x) cout << num[i] << ' ';
-    }
-    return 0;
 }
