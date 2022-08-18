@@ -1,15 +1,13 @@
-#include<stdio.h>
-
-int main(void) {
-	int a,b;
-	int max = -1000000;
-	int min = 1000000;
-	scanf("%d", &a);
-	for (int i = 0; i < a; i++) {
-		scanf("%d", &b);
-		if (b > max)max = b;
-		if (b < min)min = b;
-	}
-	printf("%d %d", min, max);
-	return 0;
+#include<bits/stdc++.h>
+using namespace std;
+int main() {
+    ios::sync_with_stdio(0);
+    cin.tie(0);
+    
+    int n,k[1000000];
+    cin >> n;
+    for (int i = 0; i < n; i++) {
+        cin >> k[i];
+    }
+    cout <<*min_element(k, k + n)<< ' '<< *max_element(k,k+n)  ;
 }
