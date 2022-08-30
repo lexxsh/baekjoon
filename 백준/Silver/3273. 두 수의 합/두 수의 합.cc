@@ -1,19 +1,19 @@
-#include<iostream>
+#include<bits/stdc++.h>
 using namespace std;
-int num[2000001];
-int k[100001];
+int a[100001];
+int b[2000001];
 int main() {
     ios::sync_with_stdio(0);
     cin.tie(0);
-    int n, x, cnt(0);
+    int n,x,cnt(0);
     cin >> n;
     for (int i = 0; i < n; i++) {
-        cin >> k[i];
-        num[k[i]]++;
+        cin >> a[i];
+        b[a[i]]++;
     }
     cin >> x;
     for (int i = 0; i < n; i++) {
-        if (x > k[i] && num[x - k[i]]) cnt++;
+        if (x>a[i] && b[x - a[i]] == 1)cnt++;
     }
     cout << cnt/2;
 }
