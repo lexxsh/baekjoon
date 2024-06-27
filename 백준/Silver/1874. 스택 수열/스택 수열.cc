@@ -1,27 +1,29 @@
-#include<bits/stdc++.h>
-
+#include<stack>
+#include<iostream>
 using namespace std;
 
 int main() {
-	int n,cnt(1);
-	string k;
+	stack<int> s1;
+	int n;
 	cin >> n;
-	stack<int>s;
+	int k;
+	int num = 1;
+	string ans;
 	while (n--) {
-		int x;
-		cin >> x;
-		while (cnt <= x) {
-			s.push(cnt++);
-			k += "+";
+		cin >> k;
+		while (num <= k) {
+			s1.push(num);
+			num++;
+			ans += "+";
 		}
-		if (x == s.top()) {
-			s.pop();
-			k += "-";
+		if (k == s1.top()) {
+			s1.pop();
+			ans += "-";
 		}
 		else {
 			cout << "NO";
 			return 0;
 		}
 	}
-	for (auto c : k) cout << c << '\n';
+	for (auto a : ans) cout << a << "\n";
 }
