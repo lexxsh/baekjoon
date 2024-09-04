@@ -1,2 +1,1 @@
-s = input()
-print((sum(s[i] != s[i+1] for i in range(len(s)-1)) + 1) // 2)
+s=input().count;print(max(s('01'),s('10')))
