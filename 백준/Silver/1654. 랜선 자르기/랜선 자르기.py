@@ -2,8 +2,7 @@ k,n = map(int,input().split())
 a=[]
 for i in range(k):
     a.append(int(input()))
-a.sort(reverse=True)
-start,end = 1,a[0]
+start,end = 1,max(a)
 ans = 0
 while start <= end:
     cnt = 0
