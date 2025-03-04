@@ -1,5 +1,9 @@
+import sys
+input = sys.stdin.readline
 n = int(input())
-arr = [input() for _ in range(n)]
-arr = list(set(arr))
-arr.sort(key=lambda x:(len(x),x))
-print(*arr,sep='\n')
+word = set([])
+for i in range(n):
+    t = input().strip()
+    word.add(t)
+ans = sorted(word, key = lambda x:(len(x),x))
+print(*ans,sep='\n')
