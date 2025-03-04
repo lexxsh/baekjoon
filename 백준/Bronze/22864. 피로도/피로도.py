@@ -1,14 +1,14 @@
+import sys
+input = sys.stdin.readline
 a,b,c,m = map(int,input().split())
-work = 0
+hour = 24
 tire = 0
-
-for i in range(24):
-    if tire + a <= m:
-           work += b
-           tire += a
+job = 0
+while(hour):
+    hour -= 1
+    if tire+a > m:
+        tire = max(0,tire - c)
     else:
-        if tire - c >= 0:
-            tire -= c
-        else:
-            tire = 0
-print(work)
+        tire += a
+        job += b
+print(job)
