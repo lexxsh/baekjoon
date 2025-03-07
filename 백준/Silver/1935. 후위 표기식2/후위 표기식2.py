@@ -1,23 +1,21 @@
-import sys
-input = sys.stdin.readline
 n = int(input())
-a = input().strip()
-stack = []
+s = input()
 num = []
 for i in range(n):
     num.append(int(input()))
-for i in a:
-    if 'A' <= i <= 'Z':
-        stack.append(num[ord(i)-ord('A')])
+stack = []
+for a in s:
+    if 'A' <= a <= 'Z':
+        stack.append(num[ord(a)-ord('A')])
     else:
-        num2 = stack.pop()
-        num1 = stack.pop()
-        if i == '*':
-            stack.append(num1 * num2)
-        if i == '+':
-            stack.append(num1 + num2)
-        if i == '/':
-            stack.append(num1 / num2)
-        if i == '-':
-            stack.append(num1 - num2)
-print(format(*stack,".2f"))            
+        t1 = stack.pop()
+        t2 = stack.pop()
+        if a == '+':
+            stack.append(t2+t1)
+        elif a == '-':
+            stack.append(t2-t1)
+        elif a == '*':
+            stack.append(t2*t1)
+        elif a == '/':
+            stack.append(t2/t1)
+print(f'{stack[-1]:.2f}')
