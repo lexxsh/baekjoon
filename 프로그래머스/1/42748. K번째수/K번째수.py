@@ -1,7 +1,7 @@
 def solution(arr, commands):
-    answer = []
+    ans = []
     for command in commands:
-        result = sorted(arr[command[0]-1:command[1]])
-        answer.append(result[command[2]-1])
-    
-    return answer
+        new = arr[command[0]-1:command[1]]
+        new = sorted(new)
+        ans.append(new[command[2]-1])
+    return ans
